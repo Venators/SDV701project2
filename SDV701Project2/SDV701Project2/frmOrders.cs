@@ -15,6 +15,14 @@ namespace SDV701Project2
         public frmOrders()
         {
             InitializeComponent();
+            UpdateDisplay();
+        }
+        public async void UpdateDisplay()
+        {
+            lstOrders.DataSource = null;
+            lstOrders.DataSource = await clsJSONConnection.GetArtistNamesAsync();
+            var message = string.Join(Environment.NewLine, lstOrders.DataSource);
+            MessageBox.Show(message);
         }
     }
 }

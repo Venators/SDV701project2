@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lstbxBeansList = new System.Windows.Forms.ListBox();
+            this.lstBeans = new System.Windows.Forms.ListBox();
             this.lblBeverages = new System.Windows.Forms.Label();
             this.lblQuantity = new System.Windows.Forms.Label();
             this.lblQuantityVar = new System.Windows.Forms.Label();
@@ -38,13 +38,13 @@
             this.btnClose = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // lstbxBeansList
+            // lstBeans
             // 
-            this.lstbxBeansList.FormattingEnabled = true;
-            this.lstbxBeansList.Location = new System.Drawing.Point(16, 29);
-            this.lstbxBeansList.Name = "lstbxBeansList";
-            this.lstbxBeansList.Size = new System.Drawing.Size(120, 160);
-            this.lstbxBeansList.TabIndex = 0;
+            this.lstBeans.FormattingEnabled = true;
+            this.lstBeans.Location = new System.Drawing.Point(16, 29);
+            this.lstBeans.Name = "lstBeans";
+            this.lstBeans.Size = new System.Drawing.Size(120, 160);
+            this.lstBeans.TabIndex = 0;
             // 
             // lblBeverages
             // 
@@ -121,7 +121,7 @@
             this.Controls.Add(this.lblQuantityVar);
             this.Controls.Add(this.lblQuantity);
             this.Controls.Add(this.lblBeverages);
-            this.Controls.Add(this.lstbxBeansList);
+            this.Controls.Add(this.lstBeans);
             this.Name = "frmBeverages";
             this.Text = "Beverages";
             this.ResumeLayout(false);
@@ -131,7 +131,7 @@
 
         #endregion
 
-        private System.Windows.Forms.ListBox lstbxBeansList;
+        private System.Windows.Forms.ListBox lstBeans;
         private System.Windows.Forms.Label lblBeverages;
         private System.Windows.Forms.Label lblQuantity;
         private System.Windows.Forms.Label lblQuantityVar;

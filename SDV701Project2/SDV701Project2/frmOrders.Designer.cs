@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.lblOrders = new System.Windows.Forms.Label();
-            this.lstbxOrders = new System.Windows.Forms.ListBox();
+            this.lstOrders = new System.Windows.Forms.ListBox();
             this.btnDeleteOrder = new System.Windows.Forms.Button();
             this.btnManageBeverages = new System.Windows.Forms.Button();
             this.btnQuitApp = new System.Windows.Forms.Button();
@@ -44,13 +44,13 @@
             this.lblOrders.TabIndex = 0;
             this.lblOrders.Text = "Orders";
             // 
-            // lstbxOrders
+            // lstOrders
             // 
-            this.lstbxOrders.FormattingEnabled = true;
-            this.lstbxOrders.Location = new System.Drawing.Point(16, 29);
-            this.lstbxOrders.Name = "lstbxOrders";
-            this.lstbxOrders.Size = new System.Drawing.Size(256, 160);
-            this.lstbxOrders.TabIndex = 1;
+            this.lstOrders.FormattingEnabled = true;
+            this.lstOrders.Location = new System.Drawing.Point(16, 29);
+            this.lstOrders.Name = "lstOrders";
+            this.lstOrders.Size = new System.Drawing.Size(256, 160);
+            this.lstOrders.TabIndex = 1;
             // 
             // btnDeleteOrder
             // 
@@ -87,7 +87,7 @@
             this.Controls.Add(this.btnQuitApp);
             this.Controls.Add(this.btnManageBeverages);
             this.Controls.Add(this.btnDeleteOrder);
-            this.Controls.Add(this.lstbxOrders);
+            this.Controls.Add(this.lstOrders);
             this.Controls.Add(this.lblOrders);
             this.Name = "frmOrders";
             this.Text = "Orders";
@@ -99,7 +99,7 @@
         #endregion
 
         private System.Windows.Forms.Label lblOrders;
-        private System.Windows.Forms.ListBox lstbxOrders;
+        private System.Windows.Forms.ListBox lstOrders;
         private System.Windows.Forms.Button btnDeleteOrder;
         private System.Windows.Forms.Button btnManageBeverages;
         private System.Windows.Forms.Button btnQuitApp;

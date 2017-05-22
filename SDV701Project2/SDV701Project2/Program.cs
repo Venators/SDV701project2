@@ -17,13 +17,13 @@ namespace SDV701Project2
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new frmOrders());
-            Application.Run(new frmBeverages());
+            /*Application.Run(new frmBeverages());
             Application.Run(new frmBeans());
             Application.Run(new frmCoffee());
             Application.Run(new frmWithoutMilk());
             Application.Run(new frmWithMilk());
             Application.Run(new frmWithFlavour());
-            Application.Run(new InputBox());
+            Application.Run(new InputBox());*/
         }
     }
 }
