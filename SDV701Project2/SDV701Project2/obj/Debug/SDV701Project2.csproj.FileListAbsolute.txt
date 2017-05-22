@@ -1,0 +1,22 @@
+c:\users\venator\documents\visual studio 2015\Projects\SDV701Project2\SDV701Project2\bin\Debug\SDV701Project2.exe.config
+c:\users\venator\documents\visual studio 2015\Projects\SDV701Project2\SDV701Project2\bin\Debug\SDV701Project2.exe
+c:\users\venator\documents\visual studio 2015\Projects\SDV701Project2\SDV701Project2\bin\Debug\SDV701Project2.pdb
+c:\users\venator\documents\visual studio 2015\Projects\SDV701Project2\SDV701Project2\obj\Debug\SDV701Project2.csprojResolveAssemblyReference.cache
+c:\users\venator\documents\visual studio 2015\Projects\SDV701Project2\SDV701Project2\obj\Debug\SDV701Project2.frmBeans.resources
+c:\users\venator\documents\visual studio 2015\Projects\SDV701Project2\SDV701Project2\obj\Debug\SDV701Project2.frmCoffee.resources
+c:\users\venator\documents\visual studio 2015\Projects\SDV701Project2\SDV701Project2\obj\Debug\SDV701Project2.Properties.Resources.resources
+c:\users\venator\documents\visual studio 2015\Projects\SDV701Project2\SDV701Project2\obj\Debug\SDV701Project2.csproj.GenerateResource.Cache
+c:\users\venator\documents\visual studio 2015\Projects\SDV701Project2\SDV701Project2\obj\Debug\SDV701Project2.exe
+c:\users\venator\documents\visual studio 2015\Projects\SDV701Project2\SDV701Project2\obj\Debug\SDV701Project2.pdb
+c:\users\venator\documents\visual studio 2015\Projects\SDV701Project2\SDV701Project2\obj\Debug\SDV701Project2.frmWithMilk.resources
+c:\users\venator\documents\visual studio 2015\Projects\SDV701Project2\SDV701Project2\obj\Debug\SDV701Project2.frmWithoutMilk.resources
+c:\users\venator\documents\visual studio 2015\Projects\SDV701Project2\SDV701Project2\obj\Debug\SDV701Project2.frmWithFlavour.resources
+C:\Users\Venator\documents\visual studio 2015\Projects\SDV701Project2\SDV701Project2\obj\Debug\SDV701Project2.frmBeverages.resources
+C:\Users\Venator\documents\visual studio 2015\Projects\SDV701Project2\SDV701Project2\obj\Debug\SDV701Project2.frmOrders.resources
+C:\Users\Venator\documents\visual studio 2015\Projects\SDV701Project2\SDV701Project2\obj\Debug\SDV701Project2.InputBox.resources
+C:\Users\Venator\Dropbox\Semester One Course Files\SDV701\SDV701Project2\SDV701Project2\bin\Debug\SDV701Project2.exe.config
+C:\Users\Venator\Dropbox\Semester One Course Files\SDV701\SDV701Project2\SDV701Project2\obj\Debug\SDV701Project2.exe
+C:\Users\Venator\Dropbox\Semester One Course Files\SDV701\SDV701Project2\SDV701Project2\obj\Debug\SDV701Project2.pdb
+C:\Users\David\Dropbox\Semester One Course Files\SDV701\SDV701Project2\SDV701Project2\bin\Debug\SDV701Project2.exe.config
+C:\Users\David\Dropbox\Semester One Course Files\SDV701\SDV701Project2\SDV701Project2\obj\Debug\SDV701Project2.exe
+C:\Users\David\Dropbox\Semester One Course Files\SDV701\SDV701Project2\SDV701Project2\obj\Debug\SDV701Project2.pdb
