@@ -16,5 +16,7 @@ namespace SDV701Project2
         {
             InitializeComponent();
         }
+
+        //public static void Run(clsBeans prBean)
     }
 }
