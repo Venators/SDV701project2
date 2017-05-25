@@ -25,11 +25,28 @@ namespace SDV701Project2
             (await lcHttpClient.GetStringAsync("http://localhost:8080/CafedesPensees/API/ViewOrders/"));
         }
 
-        internal async static Task<List<clsBeverages>> ViewBeverages()
+        internal async static Task<SortedList<string, clsBeans>> ViewBeverages()
         {
+            try
+            {
+                var lcBeansList = new SortedList<string, clsBeans>();
+                using (HttpClient lcHttpClient = new HttpClient())
+                    return lcBeansList = JsonConvert.DeserializeObject<SortedList<string, clsBeans>>
+                (await lcHttpClient.GetStringAsync("http://localhost:8080/CafedesPensees/API/ViewBeverages/"));
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.GetBaseException().ToString());
+            }
+            return null;
+        }
+
+        internal async static Task<List<clsCoffees>> ViewCoffees(string prBeanID)
+        {
+            var lcBeanID = prBeanID;
             using (HttpClient lcHttpClient = new HttpClient())
-                return JsonConvert.DeserializeObject<List<clsBeverages>>
-            (await lcHttpClient.GetStringAsync("http://localhost:8080/CafedesPensees/API/ViewBeverages/"));
+                return JsonConvert.DeserializeObject<List<clsCoffees>>
+            (await lcHttpClient.GetStringAsync("http://localhost:8080/CafedesPensees/API/ViewCoffees/" + prBeanID));
         }
     }
 

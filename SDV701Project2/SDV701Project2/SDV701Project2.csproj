@@ -69,7 +69,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="clsBeans.cs" />
+    <Compile Include="clsBeansList.cs" />
     <Compile Include="clsBeverages.cs" />
+    <Compile Include="clsCoffees.cs" />
     <Compile Include="clsJSONConnection.cs" />
     <Compile Include="clsOrders.cs" />
     <Compile Include="frmBeans.cs">

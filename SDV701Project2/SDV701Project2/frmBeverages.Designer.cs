@@ -116,6 +116,7 @@
             this.Controls.Add(this.lstBeans);
             this.Name = "frmBeverages";
             this.Text = "Beverages";
+            this.Load += new System.EventHandler(this.frmBeverages_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

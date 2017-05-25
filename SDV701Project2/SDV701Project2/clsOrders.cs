@@ -18,7 +18,7 @@ namespace SDV701Project2
         public string CoffeeName { get; set; }
         public decimal Price { get; set; }
         public int Quantity { get; set; }
-        //public DateTime OrderDateTime { get; set; }
+        public string OrderDateTime { get; set; }
         public string CupSize { get; set; }
         public int NeedsCarryTray { get; set; }
         public int NeedsCupSleeve { get; set; }

@@ -16,10 +16,18 @@ namespace SDV701Project2
         public frmBeverages()
         {
             InitializeComponent();
+            //UpdateDisplay();
+        }
+        //private clsBeansList _BeansList = new clsBeansList();
+        private SortedList<string, clsBeans> _BeansList;
+
+        private void frmBeverages_Load(object sender, EventArgs e)
+        {
+            _BeansList = clsBeansList.GetBeansList();
             UpdateDisplay();
         }
 
-        public async void UpdateDisplay()
+        public void UpdateDisplay()
         {
             var json_data = string.Empty;
             using (var w = new WebClient())
@@ -27,8 +35,12 @@ namespace SDV701Project2
             MessageBox.Show(json_data);
             try
             {
+                string[] lcDisplayList = new string[_BeansList.Count];
+
                 lstBeans.DataSource = null;
-                lstBeans.DataSource = await clsJSONConnection.ViewBeverages();
+                _BeansList.Keys.CopyTo(lcDisplayList, 0);
+                lstBeans.DataSource = lcDisplayList;
+                ///lstBeans.DataSource = await clsJSONConnection.ViewBeverages();
                 //lblQuantityVar.DataBindings = clsBeverages.GetTotalValue();
             }
             catch (Exception ex)
@@ -44,7 +56,7 @@ namespace SDV701Project2
 
         }
 
-        /*private void lstBeans_DoubleClick(object sender, EventArgs e)
+        private void lstBeans_DoubleClick(object sender, EventArgs e)
         {
             try
             {
@@ -53,7 +65,7 @@ namespace SDV701Project2
 
                 if(lcKey != null)
                 {
-                    frmBeans.Run(_BeanList[lcKey]);
+                    frmBeans.Run(_BeansList[lcKey]);
                     UpdateDisplay();
                 }
             }
@@ -61,7 +73,7 @@ namespace SDV701Project2
             {
                 MessageBox.Show(ex.Message);
             }
-        }*/
+        }
 
         private void btnDeleteBean_Click(object sender, EventArgs e)
         {
