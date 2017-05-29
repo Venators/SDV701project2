@@ -6,26 +6,29 @@ using System.Threading.Tasks;
 
 namespace SDV701Project2
 {
-    [Serializable()]
-    public class clsBeansList : SortedList<string, clsBeans>
+    class clsBeansList
     {
-        public static SortedList<string, clsBeans> GetBeansList()
+        public clsBeansList() { }
+
+        public int BeanID { get; set; }
+        public string BeanType { get; set; }
+        public string RoastType { get; set; }
+        public int Quantity { get; set; }
+        public string CountryOfOrigin { get; set; }
+
+        /*public int GetTotalValue()
         {
-            return SetBeansList().Result;
-        }
-        public async static Task<SortedList<string, clsBeans>> SetBeansList()
+            int lcTotal = 0;
+            foreach (clsBeverages clsBeverages in )
+            {
+                lcTotal += clsBeverages.Quantity;
+            }
+            return lcTotal;
+        }*/
+
+        public override string ToString()
         {
-            SortedList<string, clsBeans> lcBeansList;
-            try
-            {
-                lcBeansList = await clsJSONConnection.ViewBeverages();
-            }
-            catch
-            {
-                lcBeansList = new SortedList<string, clsBeans>();
-            }
-            return lcBeansList;
+            return BeanID.ToString() + " " + BeanType + " " + RoastType + " " + Quantity.ToString() + " " + CountryOfOrigin;
         }
     }
-
 }

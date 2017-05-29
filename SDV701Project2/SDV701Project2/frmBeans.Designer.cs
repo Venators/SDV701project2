@@ -37,14 +37,14 @@
             this.lblCountryOfOrigin = new System.Windows.Forms.Label();
             this.txtbxCountryofOrigin = new System.Windows.Forms.TextBox();
             this.gpbxSorting = new System.Windows.Forms.GroupBox();
+            this.rbtnSortDate = new System.Windows.Forms.RadioButton();
+            this.rbtnSortName = new System.Windows.Forms.RadioButton();
             this.lstbxCoffees = new System.Windows.Forms.ListBox();
             this.lblCoffees = new System.Windows.Forms.Label();
             this.btnAddCoffee = new System.Windows.Forms.Button();
             this.btnEditCoffee = new System.Windows.Forms.Button();
             this.btnDeleteCoffee = new System.Windows.Forms.Button();
             this.btnCloseBeans = new System.Windows.Forms.Button();
-            this.rbtnSortName = new System.Windows.Forms.RadioButton();
-            this.rbtnSortDate = new System.Windows.Forms.RadioButton();
             this.gpbxSorting.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -123,6 +123,28 @@
             this.gpbxSorting.TabStop = false;
             this.gpbxSorting.Text = "Sort By";
             // 
+            // rbtnSortDate
+            // 
+            this.rbtnSortDate.AutoSize = true;
+            this.rbtnSortDate.Location = new System.Drawing.Point(34, 43);
+            this.rbtnSortDate.Name = "rbtnSortDate";
+            this.rbtnSortDate.Size = new System.Drawing.Size(93, 17);
+            this.rbtnSortDate.TabIndex = 1;
+            this.rbtnSortDate.TabStop = true;
+            this.rbtnSortDate.Text = "Date of Listing";
+            this.rbtnSortDate.UseVisualStyleBackColor = true;
+            // 
+            // rbtnSortName
+            // 
+            this.rbtnSortName.AutoSize = true;
+            this.rbtnSortName.Location = new System.Drawing.Point(34, 20);
+            this.rbtnSortName.Name = "rbtnSortName";
+            this.rbtnSortName.Size = new System.Drawing.Size(87, 17);
+            this.rbtnSortName.TabIndex = 0;
+            this.rbtnSortName.TabStop = true;
+            this.rbtnSortName.Text = "Coffee Name";
+            this.rbtnSortName.UseVisualStyleBackColor = true;
+            // 
             // lstbxCoffees
             // 
             this.lstbxCoffees.FormattingEnabled = true;
@@ -148,6 +170,7 @@
             this.btnAddCoffee.TabIndex = 11;
             this.btnAddCoffee.Text = "Add";
             this.btnAddCoffee.UseVisualStyleBackColor = true;
+            this.btnAddCoffee.Click += new System.EventHandler(this.btnAddCoffee_Click);
             // 
             // btnEditCoffee
             // 
@@ -157,6 +180,7 @@
             this.btnEditCoffee.TabIndex = 12;
             this.btnEditCoffee.Text = "Edit";
             this.btnEditCoffee.UseVisualStyleBackColor = true;
+            this.btnEditCoffee.Click += new System.EventHandler(this.btnEditCoffee_Click);
             // 
             // btnDeleteCoffee
             // 
@@ -166,6 +190,7 @@
             this.btnDeleteCoffee.TabIndex = 13;
             this.btnDeleteCoffee.Text = "Delete";
             this.btnDeleteCoffee.UseVisualStyleBackColor = true;
+            this.btnDeleteCoffee.Click += new System.EventHandler(this.btnDeleteCoffee_Click);
             // 
             // btnCloseBeans
             // 
@@ -175,28 +200,7 @@
             this.btnCloseBeans.TabIndex = 14;
             this.btnCloseBeans.Text = "Close";
             this.btnCloseBeans.UseVisualStyleBackColor = true;
-            // 
-            // rbtnSortName
-            // 
-            this.rbtnSortName.AutoSize = true;
-            this.rbtnSortName.Location = new System.Drawing.Point(34, 20);
-            this.rbtnSortName.Name = "rbtnSortName";
-            this.rbtnSortName.Size = new System.Drawing.Size(87, 17);
-            this.rbtnSortName.TabIndex = 0;
-            this.rbtnSortName.TabStop = true;
-            this.rbtnSortName.Text = "Coffee Name";
-            this.rbtnSortName.UseVisualStyleBackColor = true;
-            // 
-            // rbtnSortDate
-            // 
-            this.rbtnSortDate.AutoSize = true;
-            this.rbtnSortDate.Location = new System.Drawing.Point(34, 43);
-            this.rbtnSortDate.Name = "rbtnSortDate";
-            this.rbtnSortDate.Size = new System.Drawing.Size(93, 17);
-            this.rbtnSortDate.TabIndex = 1;
-            this.rbtnSortDate.TabStop = true;
-            this.rbtnSortDate.Text = "Date of Listing";
-            this.rbtnSortDate.UseVisualStyleBackColor = true;
+            this.btnCloseBeans.Click += new System.EventHandler(this.btnCloseBeans_Click);
             // 
             // frmBeans
             // 

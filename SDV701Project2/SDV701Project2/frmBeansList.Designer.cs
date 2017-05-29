@@ -1,6 +1,6 @@
 ﻿namespace SDV701Project2
 {
-    partial class frmBeverages
+    partial class frmBeansList
     {
         /// <summary>
         /// Required designer variable.
@@ -44,6 +44,7 @@
             this.lstBeans.Name = "lstBeans";
             this.lstBeans.Size = new System.Drawing.Size(173, 160);
             this.lstBeans.TabIndex = 0;
+            this.lstBeans.DoubleClick += new System.EventHandler(this.lstBeans_DoubleClick);
             // 
             // lblBeverages
             // 
@@ -114,7 +115,7 @@
             this.Controls.Add(this.lblQuantity);
             this.Controls.Add(this.lblBeverages);
             this.Controls.Add(this.lstBeans);
-            this.Name = "frmBeverages";
+            this.Name = "frmBeansList";
             this.Text = "Beverages";
             this.Load += new System.EventHandler(this.frmBeverages_Load);
             this.ResumeLayout(false);

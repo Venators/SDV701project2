@@ -38,11 +38,11 @@ namespace SDV701Project2
 
             if (TableNumber != 0)
             {
-                return CustomerName + " " + BeanType + " " + RoastType + " " + CoffeeName + " " + "x" + Quantity.ToString() + " " + "$" + (Price * Quantity).ToString() + " " + CupSize + " " + "Table " + TableNumber.ToString();
+                return OrderDateTime + " " + CustomerName + " " + BeanType + " " + RoastType + " " + CoffeeName + " " + "x" + Quantity.ToString() + " " + "$" + (Price * Quantity).ToString() + " " + CupSize + " " + "Table " + TableNumber.ToString();
             }
             else
             {
-                return CustomerName + " " + BeanType + " " + RoastType + " " + CoffeeName + " " + "x" + Quantity.ToString() + " " + "$" + (Price * Quantity).ToString() + " " + CupSize + " " + TrayRequ + " " + SleeveRequ;
+                return OrderDateTime + " " + CustomerName + " " + BeanType + " " + RoastType + " " + CoffeeName + " " + "x" + Quantity.ToString() + " " + "$" + (Price * Quantity).ToString() + " " + CupSize + " " + TrayRequ + " " + SleeveRequ;
             }
         }
     }

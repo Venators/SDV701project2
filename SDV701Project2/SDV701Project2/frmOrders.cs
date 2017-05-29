@@ -42,7 +42,7 @@ namespace SDV701Project2
 
         private void btnManageBeverages_Click(object sender, EventArgs e)
         {
-            Form frmBeverages = new frmBeverages();
+            Form frmBeverages = new frmBeansList();
             frmBeverages.Show();
         }
         private void btnQuitApp_Click(object sender, EventArgs e)

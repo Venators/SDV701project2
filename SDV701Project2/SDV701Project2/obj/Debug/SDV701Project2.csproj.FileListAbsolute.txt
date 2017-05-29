@@ -21,13 +21,12 @@ C:\Users\David\Dropbox\Semester One Course Files\SDV701\SDV701Project2\SDV701Pro
 C:\Users\David\Dropbox\Semester One Course Files\SDV701\SDV701Project2\SDV701Project2\obj\Debug\SDV701Project2.exe
 C:\Users\David\Dropbox\Semester One Course Files\SDV701\SDV701Project2\SDV701Project2\obj\Debug\SDV701Project2.pdb
 C:\Users\David\Dropbox\Semester One Course Files\SDV701\Project2SDV701\SDV701Project2\SDV701Project2\bin\Debug\SDV701Project2.exe.config
-C:\Users\David\Dropbox\Semester One Course Files\SDV701\Project2SDV701\SDV701Project2\SDV701Project2\obj\Debug\SDV701Project2.exe
-C:\Users\David\Dropbox\Semester One Course Files\SDV701\Project2SDV701\SDV701Project2\SDV701Project2\obj\Debug\SDV701Project2.pdb
 C:\Users\David\Dropbox\Semester One Course Files\SDV701\Project2SDV701\SDV701Project2\SDV701Project2\bin\Debug\SDV701Project2.exe
 C:\Users\David\Dropbox\Semester One Course Files\SDV701\Project2SDV701\SDV701Project2\SDV701Project2\bin\Debug\SDV701Project2.pdb
+C:\Users\David\Dropbox\Semester One Course Files\SDV701\Project2SDV701\SDV701Project2\SDV701Project2\bin\Debug\Newtonsoft.Json.dll
+C:\Users\David\Dropbox\Semester One Course Files\SDV701\Project2SDV701\SDV701Project2\SDV701Project2\bin\Debug\Newtonsoft.Json.xml
 C:\Users\David\Dropbox\Semester One Course Files\SDV701\Project2SDV701\SDV701Project2\SDV701Project2\obj\Debug\SDV701Project2.frmBeans.resources
 C:\Users\David\Dropbox\Semester One Course Files\SDV701\Project2SDV701\SDV701Project2\SDV701Project2\obj\Debug\SDV701Project2.frmCoffee.resources
-C:\Users\David\Dropbox\Semester One Course Files\SDV701\Project2SDV701\SDV701Project2\SDV701Project2\obj\Debug\SDV701Project2.frmBeverages.resources
 C:\Users\David\Dropbox\Semester One Course Files\SDV701\Project2SDV701\SDV701Project2\SDV701Project2\obj\Debug\SDV701Project2.frmOrders.resources
 C:\Users\David\Dropbox\Semester One Course Files\SDV701\Project2SDV701\SDV701Project2\SDV701Project2\obj\Debug\SDV701Project2.frmWithFlavour.resources
 C:\Users\David\Dropbox\Semester One Course Files\SDV701\Project2SDV701\SDV701Project2\SDV701Project2\obj\Debug\SDV701Project2.frmWithMilk.resources
@@ -35,6 +34,7 @@ C:\Users\David\Dropbox\Semester One Course Files\SDV701\Project2SDV701\SDV701Pro
 C:\Users\David\Dropbox\Semester One Course Files\SDV701\Project2SDV701\SDV701Project2\SDV701Project2\obj\Debug\SDV701Project2.InputBox.resources
 C:\Users\David\Dropbox\Semester One Course Files\SDV701\Project2SDV701\SDV701Project2\SDV701Project2\obj\Debug\SDV701Project2.Properties.Resources.resources
 C:\Users\David\Dropbox\Semester One Course Files\SDV701\Project2SDV701\SDV701Project2\SDV701Project2\obj\Debug\SDV701Project2.csproj.GenerateResource.Cache
-C:\Users\David\Dropbox\Semester One Course Files\SDV701\Project2SDV701\SDV701Project2\SDV701Project2\bin\Debug\Newtonsoft.Json.dll
-C:\Users\David\Dropbox\Semester One Course Files\SDV701\Project2SDV701\SDV701Project2\SDV701Project2\bin\Debug\Newtonsoft.Json.xml
+C:\Users\David\Dropbox\Semester One Course Files\SDV701\Project2SDV701\SDV701Project2\SDV701Project2\obj\Debug\SDV701Project2.exe
+C:\Users\David\Dropbox\Semester One Course Files\SDV701\Project2SDV701\SDV701Project2\SDV701Project2\obj\Debug\SDV701Project2.pdb
+C:\Users\David\Dropbox\Semester One Course Files\SDV701\Project2SDV701\SDV701Project2\SDV701Project2\obj\Debug\SDV701Project2.frmBeansList.resources
 C:\Users\David\Dropbox\Semester One Course Files\SDV701\Project2SDV701\SDV701Project2\SDV701Project2\obj\Debug\SDV701Project2.csprojResolveAssemblyReference.cache

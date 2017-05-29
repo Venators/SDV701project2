@@ -8,12 +8,14 @@ namespace SDV701Project2
 {
     public class clsBeans
     {
+        public clsBeans() { }
+
         public int BeanID { get; set; }
         public string BeanType { get; set; }
         public string RoastType { get; set; }
         public int Quantity { get; set; }
         public string CountryOfOrigin { get; set; }
-
+        public ICollection<clsCoffees> BeanCoffees { get; set; }
         /*public int GetTotalValue()
         {
             int lcTotal = 0;
@@ -26,7 +28,7 @@ namespace SDV701Project2
 
         public override string ToString()
         {
-            return BeanType + " " + RoastType + " " + Quantity.ToString() + " " + CountryOfOrigin;
+            return BeanID.ToString() + " " + BeanType + " " + RoastType + " " + Quantity.ToString() + " " + CountryOfOrigin;
         }
     }
 }
