@@ -12,14 +12,14 @@ namespace SDV701Project2
     {
 
         public delegate void LoadWithoutMilkFormDelegate(clsWithoutMilk prcoffee);
-        public static LoadWithoutMilkFormDelegate WithoutMilkFormForm;
+        public static LoadWithoutMilkFormDelegate WithoutMilkForm;
 
         [DataMember]
         public int HotWater { get; set; }
 
         public override void EditDetails()
         {
-            WithoutMilkFormForm(this);
+            WithoutMilkForm(this);
         }
 
         public override string ToString()

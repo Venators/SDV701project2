@@ -8,6 +8,11 @@ namespace SDV701Project2
 {
     public class clsBeans
     {
+        public void EditCoffee(int prKey)
+        {
+            clsCoffees lcCoffee = BeanCoffees[prKey];
+            lcCoffee.EditDetails();
+        }
         public clsBeans() { }
 
         public int BeanID { get; set; }
@@ -15,7 +20,7 @@ namespace SDV701Project2
         public string RoastType { get; set; }
         public int Quantity { get; set; }
         public string CountryOfOrigin { get; set; }
-        public ICollection<clsCoffees> BeanCoffees { get; set; }
+        public IList<clsCoffees> BeanCoffees { get; set; }
         /*public int GetTotalValue()
         {
             int lcTotal = 0;

@@ -20,10 +20,10 @@ namespace SDV701Project2
         }
         public async void UpdateDisplay()
         {
-            var json_data = string.Empty;
+            /*var json_data = string.Empty;
             using (var w = new WebClient())
                 json_data = w.DownloadString("http://localhost:8080/CafedesPensees/API/ViewOrders/");
-            MessageBox.Show(json_data);
+            MessageBox.Show(json_data);*/
             try
             {
                 lstOrders.DataSource = null;
@@ -35,9 +35,18 @@ namespace SDV701Project2
             }
         }
 
-        private void btnDeleteOrder_Click(object sender, EventArgs e)
+        private async void btnDeleteOrder_Click(object sender, EventArgs e)
         {
+            string lcKey;
+            clsOrders lcOrder = lstOrders.SelectedValue as clsOrders;
 
+            lcKey = Convert.ToString(lcOrder.OrderID);
+            bool OrderDeleted = await clsJSONConnection.DeleteOrder(lcKey);
+            if(OrderDeleted == true)
+            {
+                MessageBox.Show("Order " + lcKey + " has been deleted.");
+                UpdateDisplay();
+            }
         }
 
         private void btnManageBeverages_Click(object sender, EventArgs e)

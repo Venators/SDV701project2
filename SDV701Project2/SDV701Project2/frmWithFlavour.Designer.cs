@@ -31,9 +31,13 @@
             this.lblChocolate = new System.Windows.Forms.Label();
             this.lblChocolateDusting = new System.Windows.Forms.Label();
             this.lblFlavoured = new System.Windows.Forms.Label();
-            this.txtbxChocolate = new System.Windows.Forms.TextBox();
-            this.txtbxChocolateDusting = new System.Windows.Forms.TextBox();
-            this.txtbxFlavouring = new System.Windows.Forms.TextBox();
+            this.lblFrothyMilk = new System.Windows.Forms.Label();
+            this.lblSteamedMilk = new System.Windows.Forms.Label();
+            this.ckbxSteamedMilk = new System.Windows.Forms.CheckBox();
+            this.ckbxFrothedMilk = new System.Windows.Forms.CheckBox();
+            this.ckbxChocolate = new System.Windows.Forms.CheckBox();
+            this.ckbxChocolateDusting = new System.Windows.Forms.CheckBox();
+            this.cobxFlavoured = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // lblChocolate
@@ -63,34 +67,83 @@
             this.lblFlavoured.TabIndex = 16;
             this.lblFlavoured.Text = "Flavoured";
             // 
-            // txtbxChocolate
+            // lblFrothyMilk
             // 
-            this.txtbxChocolate.Location = new System.Drawing.Point(91, 164);
-            this.txtbxChocolate.Name = "txtbxChocolate";
-            this.txtbxChocolate.Size = new System.Drawing.Size(100, 20);
-            this.txtbxChocolate.TabIndex = 17;
+            this.lblFrothyMilk.AutoSize = true;
+            this.lblFrothyMilk.Location = new System.Drawing.Point(12, 141);
+            this.lblFrothyMilk.Name = "lblFrothyMilk";
+            this.lblFrothyMilk.Size = new System.Drawing.Size(65, 13);
+            this.lblFrothyMilk.TabIndex = 21;
+            this.lblFrothyMilk.Text = "Frothed Milk";
             // 
-            // txtbxChocolateDusting
+            // lblSteamedMilk
             // 
-            this.txtbxChocolateDusting.Location = new System.Drawing.Point(91, 190);
-            this.txtbxChocolateDusting.Name = "txtbxChocolateDusting";
-            this.txtbxChocolateDusting.Size = new System.Drawing.Size(100, 20);
-            this.txtbxChocolateDusting.TabIndex = 18;
+            this.lblSteamedMilk.AutoSize = true;
+            this.lblSteamedMilk.Location = new System.Drawing.Point(12, 115);
+            this.lblSteamedMilk.Name = "lblSteamedMilk";
+            this.lblSteamedMilk.Size = new System.Drawing.Size(71, 13);
+            this.lblSteamedMilk.TabIndex = 20;
+            this.lblSteamedMilk.Text = "Steamed Milk";
             // 
-            // txtbxFlavouring
+            // ckbxSteamedMilk
             // 
-            this.txtbxFlavouring.Location = new System.Drawing.Point(91, 216);
-            this.txtbxFlavouring.Name = "txtbxFlavouring";
-            this.txtbxFlavouring.Size = new System.Drawing.Size(100, 20);
-            this.txtbxFlavouring.TabIndex = 19;
+            this.ckbxSteamedMilk.AutoSize = true;
+            this.ckbxSteamedMilk.Location = new System.Drawing.Point(91, 114);
+            this.ckbxSteamedMilk.Name = "ckbxSteamedMilk";
+            this.ckbxSteamedMilk.Size = new System.Drawing.Size(44, 17);
+            this.ckbxSteamedMilk.TabIndex = 25;
+            this.ckbxSteamedMilk.Text = "Yes";
+            this.ckbxSteamedMilk.UseVisualStyleBackColor = true;
+            // 
+            // ckbxFrothedMilk
+            // 
+            this.ckbxFrothedMilk.AutoSize = true;
+            this.ckbxFrothedMilk.Location = new System.Drawing.Point(91, 140);
+            this.ckbxFrothedMilk.Name = "ckbxFrothedMilk";
+            this.ckbxFrothedMilk.Size = new System.Drawing.Size(44, 17);
+            this.ckbxFrothedMilk.TabIndex = 26;
+            this.ckbxFrothedMilk.Text = "Yes";
+            this.ckbxFrothedMilk.UseVisualStyleBackColor = true;
+            // 
+            // ckbxChocolate
+            // 
+            this.ckbxChocolate.AutoSize = true;
+            this.ckbxChocolate.Location = new System.Drawing.Point(91, 166);
+            this.ckbxChocolate.Name = "ckbxChocolate";
+            this.ckbxChocolate.Size = new System.Drawing.Size(44, 17);
+            this.ckbxChocolate.TabIndex = 27;
+            this.ckbxChocolate.Text = "Yes";
+            this.ckbxChocolate.UseVisualStyleBackColor = true;
+            // 
+            // ckbxChocolateDusting
+            // 
+            this.ckbxChocolateDusting.AutoSize = true;
+            this.ckbxChocolateDusting.Location = new System.Drawing.Point(91, 192);
+            this.ckbxChocolateDusting.Name = "ckbxChocolateDusting";
+            this.ckbxChocolateDusting.Size = new System.Drawing.Size(44, 17);
+            this.ckbxChocolateDusting.TabIndex = 28;
+            this.ckbxChocolateDusting.Text = "Yes";
+            this.ckbxChocolateDusting.UseVisualStyleBackColor = true;
+            // 
+            // cobxFlavoured
+            // 
+            this.cobxFlavoured.FormattingEnabled = true;
+            this.cobxFlavoured.Location = new System.Drawing.Point(91, 216);
+            this.cobxFlavoured.Name = "cobxFlavoured";
+            this.cobxFlavoured.Size = new System.Drawing.Size(100, 21);
+            this.cobxFlavoured.TabIndex = 29;
             // 
             // frmWithFlavour
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.ClientSize = new System.Drawing.Size(284, 246);
-            this.Controls.Add(this.txtbxFlavouring);
-            this.Controls.Add(this.txtbxChocolateDusting);
-            this.Controls.Add(this.txtbxChocolate);
+            this.Controls.Add(this.cobxFlavoured);
+            this.Controls.Add(this.ckbxChocolateDusting);
+            this.Controls.Add(this.ckbxChocolate);
+            this.Controls.Add(this.ckbxFrothedMilk);
+            this.Controls.Add(this.ckbxSteamedMilk);
+            this.Controls.Add(this.lblFrothyMilk);
+            this.Controls.Add(this.lblSteamedMilk);
             this.Controls.Add(this.lblFlavoured);
             this.Controls.Add(this.lblChocolateDusting);
             this.Controls.Add(this.lblChocolate);
@@ -99,9 +152,13 @@
             this.Controls.SetChildIndex(this.lblChocolate, 0);
             this.Controls.SetChildIndex(this.lblChocolateDusting, 0);
             this.Controls.SetChildIndex(this.lblFlavoured, 0);
-            this.Controls.SetChildIndex(this.txtbxChocolate, 0);
-            this.Controls.SetChildIndex(this.txtbxChocolateDusting, 0);
-            this.Controls.SetChildIndex(this.txtbxFlavouring, 0);
+            this.Controls.SetChildIndex(this.lblSteamedMilk, 0);
+            this.Controls.SetChildIndex(this.lblFrothyMilk, 0);
+            this.Controls.SetChildIndex(this.ckbxSteamedMilk, 0);
+            this.Controls.SetChildIndex(this.ckbxFrothedMilk, 0);
+            this.Controls.SetChildIndex(this.ckbxChocolate, 0);
+            this.Controls.SetChildIndex(this.ckbxChocolateDusting, 0);
+            this.Controls.SetChildIndex(this.cobxFlavoured, 0);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -112,8 +169,12 @@
         private System.Windows.Forms.Label lblChocolate;
         private System.Windows.Forms.Label lblChocolateDusting;
         private System.Windows.Forms.Label lblFlavoured;
-        private System.Windows.Forms.TextBox txtbxChocolate;
-        private System.Windows.Forms.TextBox txtbxChocolateDusting;
-        private System.Windows.Forms.TextBox txtbxFlavouring;
+        private System.Windows.Forms.Label lblFrothyMilk;
+        private System.Windows.Forms.Label lblSteamedMilk;
+        private System.Windows.Forms.CheckBox ckbxSteamedMilk;
+        private System.Windows.Forms.CheckBox ckbxFrothedMilk;
+        private System.Windows.Forms.CheckBox ckbxChocolate;
+        private System.Windows.Forms.CheckBox ckbxChocolateDusting;
+        private System.Windows.Forms.ComboBox cobxFlavoured;
     }
 }

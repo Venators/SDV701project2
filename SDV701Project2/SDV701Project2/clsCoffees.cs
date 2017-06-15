@@ -15,7 +15,7 @@ namespace SDV701Project2
     {
         public clsCoffees() { }
 
-        public static readonly string FACTORY_PROMPT = "Enter 1 for Coffees Without Milk, 2 for Coffees With Milk or 3 for Coffees With Flavour";
+        public static readonly string FACTORY_PROMPT = "Enter 1 for Coffees w/o Milk, 2 for Coffees With Milk or 3 for Coffees With Flavour";
 
         public static clsCoffees NewCoffee(char prChoice)
         {
@@ -29,7 +29,8 @@ namespace SDV701Project2
         }
 
         public abstract void EditDetails();
-
+        [DataMember]
+        public string type { get; set; }
         [DataMember]
         public int CoffeeID { get; set; }
         [DataMember]
@@ -39,14 +40,14 @@ namespace SDV701Project2
         [DataMember]
         public string DateModified{ get; set; }
         [DataMember]
-        public int Shots { get; set; }
+        public string NumberOfShots { get; set; }
         [DataMember]
         public int BeanID { get; set; }
 
-        public override string ToString()
-        {
-            return CoffeeID.ToString() + " " + CoffeeName + " " + DateModified;
-        }
+        //public override string ToString()
+        //{
+        //    return CoffeeID.ToString() + " " + CoffeeName + " " + DateModified;
+        //}
 
     }
 }

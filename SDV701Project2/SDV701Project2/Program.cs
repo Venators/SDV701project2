@@ -16,7 +16,13 @@ namespace SDV701Project2
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            clsWithMilk.WithMilkForm = new clsWithMilk.LoadWithMilkFormDelegate(frmWithMilk.Run);
+            clsWithoutMilk.WithoutMilkForm = new clsWithoutMilk.LoadWithoutMilkFormDelegate(frmWithoutMilk.Run);
+            clsWithFlavours.WithFlavoursForm = new clsWithFlavours.LoadWithFlavoursFormDelegate(frmWithFlavour.Run);
             Application.Run(new frmOrders());
+
+            
+
             /*Application.Run(new frmBeverages());
             Application.Run(new frmBeans());
             Application.Run(new frmCoffee());

@@ -23,7 +23,7 @@ namespace SDV701Project2
         [DataMember]
         public int ChocolateDusting { get; set; }
         [DataMember]
-        public int Flavoured { get; set; }
+        public string FlavourType { get; set; }
 
         public override void EditDetails()
         {

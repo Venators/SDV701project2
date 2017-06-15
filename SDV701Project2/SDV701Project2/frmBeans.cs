@@ -19,6 +19,7 @@ namespace SDV701Project2
 
         private static Dictionary<string, frmBeans> _BeansFormList = new Dictionary<string, frmBeans>();
         private static clsBeans _Beans; //= new clsBeans();
+        private clsCoffees _Coffees;
 
         public static void Run(string prKey)
         {
@@ -71,12 +72,40 @@ namespace SDV701Project2
 
         private void btnAddCoffee_Click(object sender, EventArgs e)
         {
+            string lcReply = new InputBox(clsCoffees.FACTORY_PROMPT).Answer;
+            if (!string.IsNullOrEmpty(lcReply))
+            {
+                clsCoffees lcCoffee = clsCoffees.NewCoffee(lcReply[0]);
+                if (lcCoffee != null)
+                {
+                    lcCoffee.BeanID = _Beans.BeanID;
+                    lcCoffee.EditDetails();
+                    if (!string.IsNullOrEmpty(lcCoffee.CoffeeName))
+                    {
+                        SetDetails(_Beans);
+                    }
 
+                }
+            }
         }
 
         private void btnEditCoffee_Click(object sender, EventArgs e)
         {
+            //int lcKey = lstbxCoffees.SelectedIndex;
 
+            try
+            {
+                (lstbxCoffees.SelectedValue as clsCoffees).EditDetails();
+                SetDetails(_Beans);
+                /*if (lcKey >= 0)
+                {
+                    _Beans.EditCoffee(lcKey);
+                }*/
+            }
+            catch
+            {
+                throw new Exception("Sorry no coffee selected #" + Convert.ToString(lstbxCoffees.SelectedValue));
+            }
         }
 
         private void btnDeleteCoffee_Click(object sender, EventArgs e)
@@ -86,7 +115,7 @@ namespace SDV701Project2
 
         private void btnCloseBeans_Click(object sender, EventArgs e)
         {
-            Close();
+            Hide();
         }
     }
 }
