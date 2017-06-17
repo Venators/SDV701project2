@@ -33,11 +33,11 @@
             this.lblDateModified = new System.Windows.Forms.Label();
             this.txtboxCoffeeName = new System.Windows.Forms.TextBox();
             this.txtbxCoffeePrice = new System.Windows.Forms.TextBox();
-            this.txtbxDateModified = new System.Windows.Forms.TextBox();
             this.btnOK = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.cobxNumberShots = new System.Windows.Forms.ComboBox();
             this.lblNumberShots = new System.Windows.Forms.Label();
+            this.lblDateDisplay = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblCoffeeName
@@ -81,16 +81,9 @@
             this.txtbxCoffeePrice.Size = new System.Drawing.Size(100, 20);
             this.txtbxCoffeePrice.TabIndex = 4;
             // 
-            // txtbxDateModified
-            // 
-            this.txtbxDateModified.Location = new System.Drawing.Point(91, 59);
-            this.txtbxDateModified.Name = "txtbxDateModified";
-            this.txtbxDateModified.Size = new System.Drawing.Size(100, 20);
-            this.txtbxDateModified.TabIndex = 5;
-            // 
             // btnOK
             // 
-            this.btnOK.Location = new System.Drawing.Point(197, 17);
+            this.btnOK.Location = new System.Drawing.Point(197, 4);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(75, 23);
             this.btnOK.TabIndex = 6;
@@ -100,7 +93,7 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(197, 46);
+            this.btnCancel.Location = new System.Drawing.Point(197, 31);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 7;
@@ -124,16 +117,25 @@
             this.lblNumberShots.TabIndex = 9;
             this.lblNumberShots.Text = "# Shots";
             // 
+            // lblDateDisplay
+            // 
+            this.lblDateDisplay.AutoSize = true;
+            this.lblDateDisplay.Location = new System.Drawing.Point(91, 62);
+            this.lblDateDisplay.Name = "lblDateDisplay";
+            this.lblDateDisplay.Size = new System.Drawing.Size(67, 13);
+            this.lblDateDisplay.TabIndex = 10;
+            this.lblDateDisplay.Text = "Date Display";
+            // 
             // frmCoffee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 246);
+            this.Controls.Add(this.lblDateDisplay);
             this.Controls.Add(this.lblNumberShots);
             this.Controls.Add(this.cobxNumberShots);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnOK);
-            this.Controls.Add(this.txtbxDateModified);
             this.Controls.Add(this.txtbxCoffeePrice);
             this.Controls.Add(this.txtboxCoffeeName);
             this.Controls.Add(this.lblDateModified);
@@ -153,10 +155,10 @@
         private System.Windows.Forms.Label lblDateModified;
         private System.Windows.Forms.TextBox txtboxCoffeeName;
         private System.Windows.Forms.TextBox txtbxCoffeePrice;
-        private System.Windows.Forms.TextBox txtbxDateModified;
         private System.Windows.Forms.Button btnOK;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.ComboBox cobxNumberShots;
         private System.Windows.Forms.Label lblNumberShots;
+        private System.Windows.Forms.Label lblDateDisplay;
     }
 }

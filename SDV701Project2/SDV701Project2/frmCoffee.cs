@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -34,7 +35,7 @@ namespace SDV701Project2
         {
             txtboxCoffeeName.Text = _Coffee.CoffeeName;
             txtbxCoffeePrice.Text = _Coffee.Price.ToString();
-            txtbxDateModified.Text = _Coffee.DateModified;
+            lblDateDisplay.Text = DateTime.Today.ToString("dd/MM/yyy");
             cobxNumberShots.DataSource = comboSource;
             cobxNumberShots.SelectedItem = _Coffee.NumberOfShots;
         }
@@ -44,7 +45,7 @@ namespace SDV701Project2
         _Coffee.CoffeeName = txtboxCoffeeName.Text;
         decimal D = decimal.Parse(txtbxCoffeePrice.Text);
         _Coffee.Price = D;
-        _Coffee.DateModified = txtbxDateModified.Text;
+        _Coffee.DateModified = lblDateDisplay.Text;
         _Coffee.NumberOfShots = cobxNumberShots.SelectedItem.ToString();
         //_Coffee.BeanID = null;
         }
@@ -57,6 +58,7 @@ namespace SDV701Project2
                 //Call Json Add
                 int NewCoffeeID = await clsJSONConnection.AddCoffee(_Coffee);
                 MessageBox.Show("New Coffe " + NewCoffeeID + " added");
+                UpdateForm();
             }
             else
             {

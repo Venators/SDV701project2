@@ -18,7 +18,7 @@ namespace SDV701Project2
     {
         private static string URL = "http://localhost:8080/CafedesPensees/API/";
 
-        public static string APIURL
+        protected static string APIURL
         {
             get{return URL;}
         }
@@ -61,16 +61,12 @@ namespace SDV701Project2
                 (await lcHttpClient.GetStringAsync(APIURL + "DeleteOrder/" + prKey));
         }
 
-        /*public async static Task<int> AddCoffee(clsCoffees lcCoffee)
+        internal async static Task<bool> DeleteCoffee(string prKey)
         {
-            HttpClient lcHttpClient = new HttpClient();
-            //client.BaseAddress = new Uri(BaseAddress);
-            lcHttpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-            var SerializedlcCoffee = JsonConvert.SerializeObject(lcCoffee);
-            var response = lcHttpClient.PostAsJsonAsync(APIURL + "AddCoffee/", SerializedlcCoffee).Result;
-            //return JsonConvert.DeserializeObject<int>
-            //(await lcHttpClient.GetStringAsync(APIURL + "AddCoffee/"));
-        }*/
+            using (HttpClient lcHttpClient = new HttpClient())
+                return JsonConvert.DeserializeObject<bool>
+                (await lcHttpClient.GetStringAsync(APIURL + "DeleteCoffee/" + prKey));
+        }
 
         internal async static Task<int> AddCoffee(clsCoffees lcCoffee)
         {
@@ -98,38 +94,5 @@ namespace SDV701Project2
                 return IDToInt;
             }
         }
-
-        //HttpResponseMessage Response = new HttpResponseMessage;
-        /*bool Response;
-
-            return JsonConvert.DeserializeObject<bool>
-            (await lcHttpClient.PostAsJsonAsync(APIURL + "AddCoffee/", SerializedlcCoffee));*/
-        //var MyClient = new HttpClient();
-        //HttpWebRequest request = HttpWebRequest.(APIURL + "AddCoffee/", SerializedlcCoffee);
-        //WebResponse response = request.GetResponse();
-        /*string SerializedlcCoffee = JsonConvert.SerializeObject(lcCoffee);
-        HttpClient lcHttpClient = new HttpClient();
-        HttpResponseMessage response = await lcHttpClient.PostAsJsonAsync(APIURL + "AddCoffee/", SerializedlcCoffee);
-        string lcResponse = response.ToString();
-        return int.Parse(lcResponse);*/
-        //return response;
-        //bool returnValue = await response.Content.ReadAsAsync<bool>();
-        //return returnValue;
-        //}
-
-        /*internal async static void DeleteOrder(string ShipID)
-        {
-            using (HttpClient lcHttpClient = new HttpClient())
-                await lcHttpClient.GetStringAsync(APIURL + "DeleteShip/" + ShipID);
-        }
-
-        internal async static Task<List<clsCoffees>> ViewCoffees(/*string prBeanID)
-                {
-                    var lcBeanID = '1';
-                    using (HttpClient lcHttpClient = new HttpClient())
-                        return JsonConvert.DeserializeObject<List<clsCoffees>>
-                    (await lcHttpClient.GetStringAsync("http://localhost:8080/CafedesPensees/API/ViewCoffees/" + lcBeanID));
-                }
-            }*/
     }
 }

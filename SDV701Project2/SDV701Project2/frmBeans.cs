@@ -84,7 +84,8 @@ namespace SDV701Project2
                     {
                         SetDetails(_Beans);
                     }
-
+                    string lcKey = lcCoffee.BeanID.ToString();
+                    RefreshData(lcKey);
                 }
             }
         }
@@ -108,9 +109,19 @@ namespace SDV701Project2
             }
         }
 
-        private void btnDeleteCoffee_Click(object sender, EventArgs e)
+        private async void btnDeleteCoffee_Click(object sender, EventArgs e)
         {
+            string lcKey;
+            clsCoffees lcCoffee = lstbxCoffees.SelectedValue as clsCoffees;
 
+            lcKey = Convert.ToString(lcCoffee.CoffeeID);
+            bool CoffeeDeleted = await clsJSONConnection.DeleteCoffee(lcKey);
+            if (CoffeeDeleted == true)
+            {
+                MessageBox.Show("Coffee " + lcKey + " has been deleted.");
+                string lcBeanKey = lcCoffee.BeanID.ToString();
+                RefreshData(lcBeanKey);
+            }
         }
 
         private void btnCloseBeans_Click(object sender, EventArgs e)

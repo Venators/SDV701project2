@@ -53,16 +53,21 @@ namespace SDV701Project2
 
         private void lstBeans_DoubleClick(object sender, EventArgs e)
         {
+            ViewSelectedBean();
+        }
+
+        private void btnViewBean_Click(object sender, EventArgs e)
+        {
+            ViewSelectedBean();
+        }
+
+        private void ViewSelectedBean()
+        {
             string lcKey;
             clsBeansList lcBean = lstBeans.SelectedValue as clsBeansList;
 
             lcKey = Convert.ToString(lcBean.BeanID);
             frmBeans.Run(lcKey);
-        }
-
-        private void btnDeleteBean_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void btnClose_Click(object sender, EventArgs e)

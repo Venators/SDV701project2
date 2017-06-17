@@ -32,9 +32,8 @@
             this.lblBeverages = new System.Windows.Forms.Label();
             this.lblQuantity = new System.Windows.Forms.Label();
             this.lblQuantityVar = new System.Windows.Forms.Label();
-            this.btnAddBean = new System.Windows.Forms.Button();
-            this.btnDeleteBean = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
+            this.btnViewBean = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lstBeans
@@ -73,26 +72,6 @@
             this.lblQuantityVar.TabIndex = 3;
             this.lblQuantityVar.Text = "label3";
             // 
-            // btnAddBean
-            // 
-            this.btnAddBean.Location = new System.Drawing.Point(195, 29);
-            this.btnAddBean.Name = "btnAddBean";
-            this.btnAddBean.Size = new System.Drawing.Size(75, 23);
-            this.btnAddBean.TabIndex = 4;
-            this.btnAddBean.Text = "Add";
-            this.btnAddBean.UseVisualStyleBackColor = true;
-            this.btnAddBean.Click += new System.EventHandler(this.btnAddBean_Click);
-            // 
-            // btnDeleteBean
-            // 
-            this.btnDeleteBean.Location = new System.Drawing.Point(195, 58);
-            this.btnDeleteBean.Name = "btnDeleteBean";
-            this.btnDeleteBean.Size = new System.Drawing.Size(75, 23);
-            this.btnDeleteBean.TabIndex = 6;
-            this.btnDeleteBean.Text = "Delete";
-            this.btnDeleteBean.UseVisualStyleBackColor = true;
-            this.btnDeleteBean.Click += new System.EventHandler(this.btnDeleteBean_Click);
-            // 
             // btnClose
             // 
             this.btnClose.Location = new System.Drawing.Point(195, 196);
@@ -103,14 +82,23 @@
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // frmBeverages
+            // btnViewBean
+            // 
+            this.btnViewBean.Location = new System.Drawing.Point(196, 29);
+            this.btnViewBean.Name = "btnViewBean";
+            this.btnViewBean.Size = new System.Drawing.Size(75, 23);
+            this.btnViewBean.TabIndex = 8;
+            this.btnViewBean.Text = "View";
+            this.btnViewBean.UseVisualStyleBackColor = true;
+            this.btnViewBean.Click += new System.EventHandler(this.btnViewBean_Click);
+            // 
+            // frmBeansList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(283, 228);
+            this.Controls.Add(this.btnViewBean);
             this.Controls.Add(this.btnClose);
-            this.Controls.Add(this.btnDeleteBean);
-            this.Controls.Add(this.btnAddBean);
             this.Controls.Add(this.lblQuantityVar);
             this.Controls.Add(this.lblQuantity);
             this.Controls.Add(this.lblBeverages);
@@ -129,9 +117,8 @@
         private System.Windows.Forms.Label lblBeverages;
         private System.Windows.Forms.Label lblQuantity;
         private System.Windows.Forms.Label lblQuantityVar;
-        private System.Windows.Forms.Button btnAddBean;
-        private System.Windows.Forms.Button btnDeleteBean;
         private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.Button btnViewBean;
     }
 }
 
