@@ -27,6 +27,7 @@ namespace SDV701Project2
         public void SetDetails(clsCoffees prCoffee)
         {
             _Coffee = prCoffee;
+            txtboxCoffeeName.Enabled = string.IsNullOrEmpty(_Coffee.CoffeeName);
             UpdateForm();
             ShowDialog();
         }
@@ -57,12 +58,29 @@ namespace SDV701Project2
             {
                 //Call Json Add
                 int NewCoffeeID = await clsJSONConnection.AddCoffee(_Coffee);
-                MessageBox.Show("New Coffe " + NewCoffeeID + " added");
-                UpdateForm();
+                if (NewCoffeeID != 0)
+                {
+                    MessageBox.Show("New Coffee " + NewCoffeeID + " added");
+                    UpdateForm();
+                }
+                else
+                {
+                    MessageBox.Show("Coffee couldn't be added");
+                }
             }
             else
             {
                 //Call Json Update
+                string UpdatedCoffee = await clsJSONConnection.EditCoffee(_Coffee);
+                if (UpdatedCoffee == "true")
+                {
+                    MessageBox.Show("Coffee " + _Coffee.CoffeeID + " edited");
+                    UpdateForm();
+                }
+                else
+                {
+                    MessageBox.Show("Coffee " + _Coffee.CoffeeID + " couldn't be edited");
+                }
             }
             Close();
         }

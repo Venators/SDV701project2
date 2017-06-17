@@ -40,7 +40,7 @@ namespace SDV701Project2
         async void RefreshData(string prKey)
         {
             _Beans = await clsJSONConnection.ViewBeanCoffees(prKey);
-            SetDetails(_Beans);
+            SetDetails();
         }
 
         /*private void UpdateDisplay()
@@ -61,7 +61,7 @@ namespace SDV701Project2
             lstbxCoffees.DataSource = _Beans.BeanCoffees;
         }
 
-        public void SetDetails(clsBeans prBean)
+        public void SetDetails()
         {
             txtbxBeanType.Enabled = string.IsNullOrEmpty(_Beans.BeanType);
             //UpdateForm();
@@ -82,7 +82,7 @@ namespace SDV701Project2
                     lcCoffee.EditDetails();
                     if (!string.IsNullOrEmpty(lcCoffee.CoffeeName))
                     {
-                        SetDetails(_Beans);
+                        SetDetails();
                     }
                     string lcKey = lcCoffee.BeanID.ToString();
                     RefreshData(lcKey);
@@ -97,7 +97,7 @@ namespace SDV701Project2
             try
             {
                 (lstbxCoffees.SelectedValue as clsCoffees).EditDetails();
-                SetDetails(_Beans);
+                SetDetails();
                 /*if (lcKey >= 0)
                 {
                     _Beans.EditCoffee(lcKey);

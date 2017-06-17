@@ -94,5 +94,29 @@ namespace SDV701Project2
                 return IDToInt;
             }
         }
+
+        internal async static Task<string> EditCoffee(clsCoffees lcCoffee)
+        {
+            var httpWebRequest = (HttpWebRequest)WebRequest.Create(APIURL + "EditCoffee/");
+            httpWebRequest.ContentType = "application/json";
+            httpWebRequest.Method = "POST";
+
+            using (var streamWriter = new StreamWriter(httpWebRequest.GetRequestStream()))
+            {
+                string SerializedlcCoffee = JsonConvert.SerializeObject(lcCoffee);
+
+                streamWriter.Write(SerializedlcCoffee);
+                streamWriter.Flush();
+                streamWriter.Close();
+            }
+
+            var httpResponse = (HttpWebResponse)httpWebRequest.GetResponse();
+            using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
+            {
+                var result = streamReader.ReadToEnd();
+                return result;
+
+            }
+        }
     }
 }
