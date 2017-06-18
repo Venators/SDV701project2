@@ -118,5 +118,19 @@ namespace SDV701Project2
 
             }
         }
+
+        internal async static Task<bool> LockToggle(string prTableName, int prKey, int prLockToggle)
+        {
+            using (HttpClient lcHttpClient = new HttpClient())
+                return JsonConvert.DeserializeObject<bool>
+                (await lcHttpClient.GetStringAsync(APIURL + "LockRecord/" + prTableName + "/" + prKey + "/" + prLockToggle + "/"));
+        }
+
+        internal async static Task<int> CheckLockStatus(string prTableName, int prKey)
+        {
+            using (HttpClient lcHttpClient = new HttpClient())
+                return JsonConvert.DeserializeObject<int>
+                (await lcHttpClient.GetStringAsync(APIURL + "CheckLockStatus/" + prTableName + "/" + prKey));
+        }
     }
 }

@@ -90,23 +90,32 @@ namespace SDV701Project2
             }
         }
 
-        private void btnEditCoffee_Click(object sender, EventArgs e)
+        private async void btnEditCoffee_Click(object sender, EventArgs e)
         {
-            //int lcKey = lstbxCoffees.SelectedIndex;
-
-            try
+            var lcCoffee = lstbxCoffees.SelectedValue as clsCoffees;
+            int IsLocked = await clsJSONConnection.CheckLockStatus("Coffee", lcCoffee.CoffeeID);
+            if (IsLocked == 0)
             {
-                (lstbxCoffees.SelectedValue as clsCoffees).EditDetails();
-                SetDetails();
-                /*if (lcKey >= 0)
+                await clsJSONConnection.LockToggle("Coffee", lcCoffee.CoffeeID, 1);
+                try
                 {
-                    _Beans.EditCoffee(lcKey);
-                }*/
+                    (lstbxCoffees.SelectedValue as clsCoffees).EditDetails();
+                    SetDetails();
+                    /*if (lcKey >= 0)
+                    {
+                        _Beans.EditCoffee(lcKey);
+                    }*/
+                }
+                catch
+                {
+                    await clsJSONConnection.LockToggle("Coffee", lcCoffee.CoffeeID, 0);
+                    throw new Exception("Sorry no coffee selected #" + Convert.ToString(lstbxCoffees.SelectedValue));
+                }
             }
-            catch
+            else
             {
-                throw new Exception("Sorry no coffee selected #" + Convert.ToString(lstbxCoffees.SelectedValue));
-            }
+                MessageBox.Show("Record is locked - please try again later");
+            }  
         }
 
         private async void btnDeleteCoffee_Click(object sender, EventArgs e)

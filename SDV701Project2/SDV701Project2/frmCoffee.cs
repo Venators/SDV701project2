@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -51,37 +52,76 @@ namespace SDV701Project2
         //_Coffee.BeanID = null;
         }
 
-        private async void btnOK_Click(object sender, EventArgs e)
+        private bool ValidateData()
         {
-            PushData();
-            if (txtboxCoffeeName.Enabled == true)
+            List<string> ErrorList = new List<string>();
+            if (txtboxCoffeeName.Text.Length >= 16)
             {
-                //Call Json Add
-                int NewCoffeeID = await clsJSONConnection.AddCoffee(_Coffee);
-                if (NewCoffeeID != 0)
+                ErrorList.Add("Please keep your coffee name under 15 characters, ");
+            }
+            if (txtbxCoffeePrice.Text != null)
+            {
+                string lcPrice = txtbxCoffeePrice.Text;
+                lcPrice = lcPrice.Replace(".", "");
+                bool IsNumerical = lcPrice.All(char.IsDigit);
+                if (IsNumerical == false)
                 {
-                    MessageBox.Show("New Coffee " + NewCoffeeID + " added");
-                    UpdateForm();
+                    ErrorList.Add("Please enter only numbers into price");
                 }
-                else
-                {
-                    MessageBox.Show("Coffee couldn't be added");
-                }
+            }
+            if (ErrorList.Count >= 1)
+            {
+                var message = string.Join(Environment.NewLine, ErrorList);
+                MessageBox.Show(message);
+                return false;
             }
             else
             {
-                //Call Json Update
-                string UpdatedCoffee = await clsJSONConnection.EditCoffee(_Coffee);
-                if (UpdatedCoffee == "true")
+                return true;
+            }
+        }
+
+        private async void btnOK_Click(object sender, EventArgs e)
+        {
+            bool Result = ValidateData();
+            if (Result == true)
+            {
+                PushData();
+                if (txtboxCoffeeName.Enabled == true)
                 {
-                    MessageBox.Show("Coffee " + _Coffee.CoffeeID + " edited");
-                    UpdateForm();
+                    //Call Json Add
+                    int NewCoffeeID = await clsJSONConnection.AddCoffee(_Coffee);
+                    if (NewCoffeeID != 0)
+                    {
+                        MessageBox.Show("New Coffee " + NewCoffeeID + " added");
+                        UpdateForm();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Coffee couldn't be added");
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Coffee " + _Coffee.CoffeeID + " couldn't be edited");
+                    //Call Json Update
+                    string UpdatedCoffee = await clsJSONConnection.EditCoffee(_Coffee);
+                    if (UpdatedCoffee == "true")
+                    {
+                        await clsJSONConnection.LockToggle("Coffee", _Coffee.CoffeeID, 0);
+                        MessageBox.Show("Coffee " + _Coffee.CoffeeID + " edited");
+                        UpdateForm();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Coffee " + _Coffee.CoffeeID + " couldn't be edited");
+                    }
                 }
+                Close();
             }
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
             Close();
         }
     }
