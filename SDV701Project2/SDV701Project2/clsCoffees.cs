@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Runtime.Serialization;
+﻿using System.Runtime.Serialization;
 
 namespace SDV701Project2
 {
@@ -43,11 +38,5 @@ namespace SDV701Project2
         public string NumberOfShots { get; set; }
         [DataMember]
         public int BeanID { get; set; }
-
-        //public override string ToString()
-        //{
-        //    return CoffeeID.ToString() + " " + CoffeeName + " " + DateModified;
-        //}
-
     }
 }

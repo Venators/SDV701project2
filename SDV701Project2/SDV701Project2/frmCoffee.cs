@@ -1,13 +1,6 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Globalization;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SDV701Project2
@@ -49,7 +42,6 @@ namespace SDV701Project2
         _Coffee.Price = D;
         _Coffee.DateModified = lblDateDisplay.Text;
         _Coffee.NumberOfShots = cobxNumberShots.SelectedItem.ToString();
-        //_Coffee.BeanID = null;
         }
 
         private bool ValidateData()
@@ -89,7 +81,6 @@ namespace SDV701Project2
                 PushData();
                 if (txtboxCoffeeName.Enabled == true)
                 {
-                    //Call Json Add
                     int NewCoffeeID = await clsJSONConnection.AddCoffee(_Coffee);
                     if (NewCoffeeID != 0)
                     {
@@ -103,7 +94,6 @@ namespace SDV701Project2
                 }
                 else
                 {
-                    //Call Json Update
                     string UpdatedCoffee = await clsJSONConnection.EditCoffee(_Coffee);
                     if (UpdatedCoffee == "true")
                     {

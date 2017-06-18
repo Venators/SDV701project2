@@ -1,11 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SDV701Project2
@@ -18,7 +12,7 @@ namespace SDV701Project2
         }
 
         private static Dictionary<string, frmBeans> _BeansFormList = new Dictionary<string, frmBeans>();
-        private static clsBeans _Beans; //= new clsBeans();
+        private static clsBeans _Beans;
         private clsCoffees _Coffees;
 
         public static void Run(string prKey)
@@ -43,14 +37,6 @@ namespace SDV701Project2
             SetDetails();
         }
 
-        /*private void UpdateDisplay()
-        {
-            private prBeanID = _Beans.BeanID.ToString();
-            string lcBeanID = _Beans.BeanID.ToString();
-
-            lstbxCoffees.DataSource = await clsJSONConnection.ViewCoffees(lcBeanID);
-        }*/
-
         private void UpdateDisplay()
         {
             txtbxBeanType.Text = _Beans.BeanType;
@@ -64,7 +50,6 @@ namespace SDV701Project2
         public void SetDetails()
         {
             txtbxBeanType.Enabled = string.IsNullOrEmpty(_Beans.BeanType);
-            //UpdateForm();
             UpdateDisplay();
             Show();
 
@@ -101,10 +86,6 @@ namespace SDV701Project2
                 {
                     (lstbxCoffees.SelectedValue as clsCoffees).EditDetails();
                     SetDetails();
-                    /*if (lcKey >= 0)
-                    {
-                        _Beans.EditCoffee(lcKey);
-                    }*/
                 }
                 catch
                 {

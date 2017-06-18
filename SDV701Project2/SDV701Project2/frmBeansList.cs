@@ -1,13 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
 using System.Net;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SDV701Project2
@@ -32,13 +24,8 @@ namespace SDV701Project2
             MessageBox.Show(json_data);
             try
             {
-                //int[] lcDisplayList = new int[_BeansList.Count];
-
                 lstBeans.DataSource = null;
-                //_BeansList.Keys.CopyTo(lcDisplayList, 0);
-                //lstBeans.DataSource = lcDisplayList;
                 lstBeans.DataSource = await clsJSONConnection.ViewBeverages();
-                //lblQuantityVar.DataBindings = clsBeverages.GetTotalValue();
             }
             catch (Exception ex)
             {

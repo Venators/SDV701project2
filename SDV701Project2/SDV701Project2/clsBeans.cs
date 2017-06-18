@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace SDV701Project2
 {
@@ -21,15 +17,6 @@ namespace SDV701Project2
         public int Quantity { get; set; }
         public string CountryOfOrigin { get; set; }
         public IList<clsCoffees> BeanCoffees { get; set; }
-        /*public int GetTotalValue()
-        {
-            int lcTotal = 0;
-            foreach (clsBeverages clsBeverages in )
-            {
-                lcTotal += clsBeverages.Quantity;
-            }
-            return lcTotal;
-        }*/
 
         public override string ToString()
         {

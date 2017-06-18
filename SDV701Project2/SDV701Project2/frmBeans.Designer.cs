@@ -36,16 +36,12 @@
             this.txtbxQuantity = new System.Windows.Forms.TextBox();
             this.lblCountryOfOrigin = new System.Windows.Forms.Label();
             this.txtbxCountryofOrigin = new System.Windows.Forms.TextBox();
-            this.gpbxSorting = new System.Windows.Forms.GroupBox();
-            this.rbtnSortDate = new System.Windows.Forms.RadioButton();
-            this.rbtnSortName = new System.Windows.Forms.RadioButton();
             this.lstbxCoffees = new System.Windows.Forms.ListBox();
             this.lblCoffees = new System.Windows.Forms.Label();
             this.btnAddCoffee = new System.Windows.Forms.Button();
             this.btnEditCoffee = new System.Windows.Forms.Button();
             this.btnDeleteCoffee = new System.Windows.Forms.Button();
             this.btnCloseBeans = new System.Windows.Forms.Button();
-            this.gpbxSorting.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblBeanType
@@ -112,43 +108,10 @@
             this.txtbxCountryofOrigin.Size = new System.Drawing.Size(115, 20);
             this.txtbxCountryofOrigin.TabIndex = 7;
             // 
-            // gpbxSorting
-            // 
-            this.gpbxSorting.Controls.Add(this.rbtnSortDate);
-            this.gpbxSorting.Controls.Add(this.rbtnSortName);
-            this.gpbxSorting.Location = new System.Drawing.Point(251, 24);
-            this.gpbxSorting.Name = "gpbxSorting";
-            this.gpbxSorting.Size = new System.Drawing.Size(157, 74);
-            this.gpbxSorting.TabIndex = 8;
-            this.gpbxSorting.TabStop = false;
-            this.gpbxSorting.Text = "Sort By";
-            // 
-            // rbtnSortDate
-            // 
-            this.rbtnSortDate.AutoSize = true;
-            this.rbtnSortDate.Location = new System.Drawing.Point(34, 43);
-            this.rbtnSortDate.Name = "rbtnSortDate";
-            this.rbtnSortDate.Size = new System.Drawing.Size(93, 17);
-            this.rbtnSortDate.TabIndex = 1;
-            this.rbtnSortDate.TabStop = true;
-            this.rbtnSortDate.Text = "Date of Listing";
-            this.rbtnSortDate.UseVisualStyleBackColor = true;
-            // 
-            // rbtnSortName
-            // 
-            this.rbtnSortName.AutoSize = true;
-            this.rbtnSortName.Location = new System.Drawing.Point(34, 20);
-            this.rbtnSortName.Name = "rbtnSortName";
-            this.rbtnSortName.Size = new System.Drawing.Size(87, 17);
-            this.rbtnSortName.TabIndex = 0;
-            this.rbtnSortName.TabStop = true;
-            this.rbtnSortName.Text = "Coffee Name";
-            this.rbtnSortName.UseVisualStyleBackColor = true;
-            // 
             // lstbxCoffees
             // 
             this.lstbxCoffees.FormattingEnabled = true;
-            this.lstbxCoffees.Location = new System.Drawing.Point(12, 135);
+            this.lstbxCoffees.Location = new System.Drawing.Point(224, 17);
             this.lstbxCoffees.Name = "lstbxCoffees";
             this.lstbxCoffees.Size = new System.Drawing.Size(276, 108);
             this.lstbxCoffees.TabIndex = 9;
@@ -156,7 +119,7 @@
             // lblCoffees
             // 
             this.lblCoffees.AutoSize = true;
-            this.lblCoffees.Location = new System.Drawing.Point(12, 119);
+            this.lblCoffees.Location = new System.Drawing.Point(221, 1);
             this.lblCoffees.Name = "lblCoffees";
             this.lblCoffees.Size = new System.Drawing.Size(43, 13);
             this.lblCoffees.TabIndex = 10;
@@ -164,7 +127,7 @@
             // 
             // btnAddCoffee
             // 
-            this.btnAddCoffee.Location = new System.Drawing.Point(323, 135);
+            this.btnAddCoffee.Location = new System.Drawing.Point(248, 131);
             this.btnAddCoffee.Name = "btnAddCoffee";
             this.btnAddCoffee.Size = new System.Drawing.Size(75, 23);
             this.btnAddCoffee.TabIndex = 11;
@@ -174,7 +137,7 @@
             // 
             // btnEditCoffee
             // 
-            this.btnEditCoffee.Location = new System.Drawing.Point(323, 164);
+            this.btnEditCoffee.Location = new System.Drawing.Point(329, 131);
             this.btnEditCoffee.Name = "btnEditCoffee";
             this.btnEditCoffee.Size = new System.Drawing.Size(75, 23);
             this.btnEditCoffee.TabIndex = 12;
@@ -184,7 +147,7 @@
             // 
             // btnDeleteCoffee
             // 
-            this.btnDeleteCoffee.Location = new System.Drawing.Point(323, 193);
+            this.btnDeleteCoffee.Location = new System.Drawing.Point(410, 131);
             this.btnDeleteCoffee.Name = "btnDeleteCoffee";
             this.btnDeleteCoffee.Size = new System.Drawing.Size(75, 23);
             this.btnDeleteCoffee.TabIndex = 13;
@@ -194,7 +157,7 @@
             // 
             // btnCloseBeans
             // 
-            this.btnCloseBeans.Location = new System.Drawing.Point(323, 222);
+            this.btnCloseBeans.Location = new System.Drawing.Point(12, 131);
             this.btnCloseBeans.Name = "btnCloseBeans";
             this.btnCloseBeans.Size = new System.Drawing.Size(75, 23);
             this.btnCloseBeans.TabIndex = 14;
@@ -206,14 +169,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(436, 261);
+            this.ClientSize = new System.Drawing.Size(511, 171);
             this.Controls.Add(this.btnCloseBeans);
             this.Controls.Add(this.btnDeleteCoffee);
             this.Controls.Add(this.btnEditCoffee);
             this.Controls.Add(this.btnAddCoffee);
             this.Controls.Add(this.lblCoffees);
             this.Controls.Add(this.lstbxCoffees);
-            this.Controls.Add(this.gpbxSorting);
             this.Controls.Add(this.txtbxCountryofOrigin);
             this.Controls.Add(this.lblCountryOfOrigin);
             this.Controls.Add(this.txtbxQuantity);
@@ -224,8 +186,6 @@
             this.Controls.Add(this.lblBeanType);
             this.Name = "frmBeans";
             this.Text = "Beans";
-            this.gpbxSorting.ResumeLayout(false);
-            this.gpbxSorting.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -241,9 +201,6 @@
         private System.Windows.Forms.TextBox txtbxQuantity;
         private System.Windows.Forms.Label lblCountryOfOrigin;
         private System.Windows.Forms.TextBox txtbxCountryofOrigin;
-        private System.Windows.Forms.GroupBox gpbxSorting;
-        private System.Windows.Forms.RadioButton rbtnSortDate;
-        private System.Windows.Forms.RadioButton rbtnSortName;
         private System.Windows.Forms.ListBox lstbxCoffees;
         private System.Windows.Forms.Label lblCoffees;
         private System.Windows.Forms.Button btnAddCoffee;
