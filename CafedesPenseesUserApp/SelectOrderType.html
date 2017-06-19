@@ -1,0 +1,74 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script>
+        $(document).ready(function(){
+            $("#ShowTable").click(function(){
+                $("#SetTable").show();
+                $("#SetTakeAway").hide();
+            });
+            $("#ShowTakeAway").click(function(){
+                $("#SetTable").hide();
+                $("#SetTakeAway").show();
+            });
+        });
+            
+        function SaveAndRedirect() {
+            var SelectedOrderType = $('input[name=OrderOptions]:checked').val();
+            if (SelectedOrderType == 'Dine In') {
+                var lcTableNumber = document.getElementById("TableNumber").value;
+                document.cookie = "TableNumber" + "=" + lcTableNumber + ";";
+                window.location.href = "http://localhost/CafedesPenseesUserApp/AddCustomerDetails.html";
+            } else if (SelectedOrderType == 'Take Away') {
+                if ($('input[name=AddCarryTray]:checked').val() && $('input[name=AddCupSleeve]:checked').val()) {
+                    var lcAddCarryTray = document.getElementById("AddCarryTray").value;
+                    document.cookie = "CarryTray" + "=" + lcAddCarryTray + ";";
+                    var lcAddCupSleeve = document.getElementById("AddCupSleeve").value;
+                    document.cookie = "CupSleeve" + "=" + lcAddCupSleeve + ";";
+                    window.location.href = "http://localhost/CafedesPenseesUserApp/AddCustomerDetails.html";
+                } else if ($('input[name=AddCupSleeve]:checked').val()) {
+                    var lcAddCupSleeve = document.getElementById("AddCupSleeve").value;
+                    document.cookie = "CupSleeve" + "=" + lcAddCupSleeve + ";";
+                    window.location.href = "http://localhost/CafedesPenseesUserApp/AddCustomerDetails.html";
+                } else if ($('input[name=AddCarryTray]:checked').val()) {
+                    var lcAddCarryTray = document.getElementById("AddCarryTray").value;
+                    document.cookie = "CarryTray" + "=" + lcAddCarryTray + ";";
+                    window.location.href = "http://localhost/CafedesPenseesUserApp/AddCustomerDetails.html";
+                }   
+            }
+        }
+        
+        </script>
+        <script src="FormToggels.js"></script>
+        <link rel="stylesheet" type="text/css" href="Pure.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <form class="pure-form pure-form-stacked" action="javascript:SaveAndRedirect();">
+            <div class="pure-control-group">     
+                <label for="" class="pure-radio">
+                    <input id="ShowTable" type="radio" name="OrderOptions" value="Dine In"> Dine In
+                </label> 
+                <div id='SetTable' style="display:none">
+                    <label for="">Table Number</label>
+                    <input type="number" id="TableNumber" name="TableNumber" requried/>
+                </div>    
+                <label for="" class="pure-radio">
+                    <input id="ShowTakeAway" type="radio" name="OrderOptions" value="Take Away"> Take Away
+                </label>
+                <div id='SetTakeAway' style="display:none">
+                    <label for="AddCarryTray" class="pure-checkbox">
+                        <input name="AddCarryTray" id="AddCarryTray" type="checkbox" value="AddCarryTray"> Add Carry Tray
+                    </label>
+                    <label for="AddCupSleeve" class="pure-checkbox">
+                        <input name="AddCupSleeve" id="AddCupSleeve" type="checkbox" value="AddCupSleeve"> Add Cup Sleeve
+                    </label>
+                </div>
+            </div>
+            <div class="pure-controls">
+                <button type="submit" class="pure-button pure-button-primary"  id="content">Continue</button>
+            </div>
+        </form>  
+    </body>
+</html>

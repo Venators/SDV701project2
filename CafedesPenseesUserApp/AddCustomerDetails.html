@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script>            
+        function SaveAndRedirect() {
+                console.log("Got To Save and Redirect");
+                var lcUserName = document.getElementById("UserName").value;
+                var lcUserEmail = document.getElementById("UserEmail").value;
+                document.cookie = "UserName" + "=" + lcUserName + ";";
+                document.cookie = "UserEmail" + "=" + lcUserEmail + ";";
+                window.location.href = "http://localhost/CafedesPenseesUserApp/ConfirmOrder.html";
+        }
+        </script>
+        <script src="FormToggels.js"></script>
+        <link rel="stylesheet" type="text/css" href="Pure.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <form class="pure-form pure-form-stacked" action="javascript:SaveAndRedirect();">
+            <div class="pure-control-group">
+                <label for="UserName">Your Name</label>
+                <input type="text" id="UserName" name="UserName" required/>
+                <label for="UserEmail">Your Email Address</label>
+                <input type="email" id="UserEmail" name="UserEmail" required/>
+            </div>
+            <div class="pure-controls">
+                <button type="submit" class="pure-button pure-button-primary"  id="content">Continue</button>
+            </div>
+        </form> 
+    </body>
+</html>

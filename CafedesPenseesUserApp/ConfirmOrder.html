@@ -1,0 +1,167 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script>
+        var lcBeanType;
+        var lcCoffeeType;
+        var lcQuantity;
+        var lcCupSize;
+        var lcTableNumber;
+        var lcAddCarryTray;
+        var lcAddCupSleeve;
+        var lcUserName;
+        var lcUserEmail;
+            
+        $(document).ready(function(){
+            lcBeanType = getCookie("BeanType");
+            lcCoffeeType = getCookie("CoffeeType");
+            lcQuantity = getCookie("Quantity");
+            lcCupSize = getCookie("CupSize");
+            lcTableNumber = getCookie("TableNumber");
+            lcAddCarryTray = getCookie("CarryTray");
+            lcAddCupSleeve = getCookie("CupSleeve");
+            lcUserName = getCookie("UserName");
+            lcUserEmail = getCookie("UserEmail");
+            
+            
+            console.log(lcBeanType);
+            console.log(lcCoffeeType);
+            console.log(lcQuantity);
+            console.log(lcCupSize);
+            console.log(lcTableNumber);
+            console.log(lcAddCarryTray);
+            console.log(lcAddCupSleeve);
+            console.log(lcUserName);
+            console.log(lcUserEmail);
+            
+            $.ajax({
+                url:'http://localhost/CafedesPensees/API/CheckBeanQuantity/' + lcBeanType + '/' + lcQuantity,
+                type:'GET',
+                dataType: 'json',
+                success: function( json ) {
+                    console.log(json);
+                    if (json == 'true'){
+                        $.ajax({
+                            url:'http://localhost/CafedesPensees/API/GetSelectedBean/' + lcBeanType,
+                            type:'GET',
+                            dataType: 'json',
+                            success: function( json ) {
+                                console.log(json);
+                                document.getElementById('BeanType').innerHTML +=  'Bean: ' + json.BeanType + '<br>';
+                                $.each(json.BeanCoffees, function(i, obj) {
+                                        console.log(obj);
+                                        document.getElementById('Price').innerHTML += 'Price: $' + (obj.Price * lcQuantity) + '<br>';
+                                        document.getElementById('CoffeeType').innerHTML +=  'Coffee Type: ' + obj.CoffeeName + '<br>';
+                                    });
+                                //document.getElementById('BeanType').innerHTML += json.BeanCoffee.Price * lcQuantity;
+                            }
+                        });
+                        document.getElementById('OrderTitle').innerHTML += 'Thank you for your order:<br>';
+                        document.getElementById('OrderDescrip').innerHTML += 'Your order is:<br>';
+                        document.getElementById('UserName').innerHTML += lcUserName + '<br>';
+                        document.getElementById('CupSize').innerHTML +=  'Cup Size: ' + lcCupSize + '<br>';
+                        document.getElementById('Quantity').innerHTML +=  'Quantity: ' + lcQuantity + '<br>';
+                        if (lcTableNumber.length  > 0){
+                            document.getElementById('OrderType').innerHTML +=  'Order Type: Dine in at Table ' + lcTableNumber + '<br>';
+                        } else {
+                            document.getElementById('OrderType').innerHTML +=  'Order Type: Take Away with ' + lcAddCarryTray + ' ' + lcAddCupSleeve + '<br>';
+                        }
+                        $("#StartOver").hide();
+                        $("#Confirm").show();
+                    } else {
+                        document.getElementById('Error').innerHTML +=  'Bean out of stock, please choose a different blend<br>';
+                        $("#StartOver").show();
+                        $("#Confirm").hide();
+                    }
+                }
+            });
+        });
+            
+        function getCookie(cname) {
+            var name = cname + "=";
+            var decodedCookie = decodeURIComponent(document.cookie);
+            var ca = decodedCookie.split(';');
+            for(var i = 0; i <ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0) == ' ') {
+                    c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                    return c.substring(name.length, c.length);
+                }
+            }
+            return "";
+        }
+            
+        function SaveAndRedirect() {
+                console.log("Got To Save and Redirect");
+                var today = new Date();
+                var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+                var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+                var dateTime = date+' '+time;
+                $.ajax({
+                    url:'http://localhost/CafedesPensees/API/CheckBeanQuantity/' + lcBeanType + '/' + lcQuantity,
+                    type:'GET',
+                    dataType: 'json',
+                    success: function( json ) {
+                        console.log(json);
+                        if (json == 'true'){
+                            var text = '{ "Order" : [{ "BeanID":"lcBeanType" , "CoffeeID":"lcCoffeeType" , "Quantity":"lcQuantity" , "OrderDateTime":"dateTime" , "CupSize":"lcCupSize" , "NeedsCarryTray":"lcAddCarryTray" , "NeedsCupSleeve":"lcAddCupSleeve" , "TableNumber":"lcTableNumber" , "CustomerName":"lcUserName" , "CustomerEmail":"lcUserEmail" } ]}';
+                            var obj = JSON.parse(text);
+                            console.log(obj);
+                            request= new XMLHttpRequest()
+                            request.open("POST", "http://localhost/CafedesPensees/API/NewOrder/", true)
+                            request.setRequestHeader("Content-type", "application/json")
+                            request.send(obj)
+                            success: function( request ) {
+                                window.location.href = "http://localhost/CafedesPenseesUserApp/SelectOrderType.html";
+                            }
+                        } else {
+                            location.reload();
+                        }
+                    }
+                });
+                /*window.location.href = "http://localhost/CafedesPenseesUserApp/SelectOrderType.html";                            $.ajax({
+                                url:'http://localhost/CafedesPensees/API/CheckBeanQuantity/' + lcBeanType + '/' + lcQuantity,
+                                type:'GET',
+                                dataType: 'json',
+                                success: function( json ) {
+                                    console.log(json);
+                                    if (json == 'true'){
+
+                                    } else {
+                                        location.reload();
+                                    }
+                                }
+                            });*/
+        }
+        
+        </script>
+        <script src="FormToggels.js"></script>
+        <link rel="stylesheet" type="text/css" href="Pure.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <form class="pure-form pure-form-stacked" action="javascript:SaveAndRedirect();">
+            <div class="pure-control-group">
+                <div id="content">
+                <div id="Error" name="Error"></div>
+                <h4 id="OrderTitle" name="OrderTitle"></h4>
+                <div id="UserName" name="UserName"></div>
+                <h4 id="OrderDescrip" name="OrderDescrip"></h4>
+                <div id="BeanType" name="BeanType"></div>
+                <div id="CupSize" name="CupSize"></div>
+                <div id="CoffeeType" name="CoffeeType"></div>
+                <div id="Quantity" name="Quantity"></div>
+                <div id="Price" name="Price"></div>
+                <div id="OrderType" name="OrderType"></div>
+                </div>
+            </div>
+            <div class="pure-controls" id="content">
+                <button type="submit" class="pure-button pure-button-primary" id="Confirm" name="Confirm">Confirm</button>
+                <a class="pure-button" href="http://localhost/CafedesPenseesUserApp/SelectCoffee.html" id="StartOver" name="StartOver">Start Over</a>
+            </div>
+        </form>
+    </body>
+</html>

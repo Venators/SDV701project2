@@ -1,0 +1,94 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                $.ajax({
+                    url:'http://localhost/CafedesPensees/API/GetInStockBeanTypes',
+                    type:'GET',
+                    dataType: 'json',
+                    success: function( json ) {
+                        $.each(json, function(i, obj) {
+                            console.log(obj.BeanType);
+                            $('#BeanType').append($('<option>').text(obj.BeanType + ' ' + obj.RoastType).attr('value', obj.BeanID));
+                        });
+                    }
+                });
+            });
+
+            function GetCoffeeTypes(keyword) {
+                //var min_length = 0; // min caracters to display the autocomplete
+                //var keyword = $('#BeanID').val();
+                console.log(keyword);
+                $.ajax({
+                    url:'http://localhost/CafedesPensees/API/GetSelectedBeanCoffees/' + keyword + '/JS',
+                    type:'GET',
+                    dataType: 'json',
+                    success: function( json ) {
+                        $.each(json, function(i, obj) {
+                            console.log(obj);
+                            $('#CoffeeType').empty();
+                            $('#CoffeeType').append($('<option>').text(obj.CoffeeName).attr('value', obj.CoffeeID));
+                        });
+                    }
+                });
+            }
+            
+            function SaveAndRedirect() {
+                var lcBeanType = document.getElementById("BeanType").value;
+                var lcCoffeeType = document.getElementById("CoffeeType").value;
+                var lcQuantity = document.getElementById("Quantity").value;
+                var lcCupSize = document.getElementById("CupSize").value;
+                /*console.log(BeanType);
+                console.log(CoffeeType);
+                console.log(Quantity);
+                console.log(CupSize);*/
+                document.cookie = "BeanType" + "=" + lcBeanType + ";";
+                document.cookie = "CoffeeType" + "=" + lcCoffeeType + ";";
+                document.cookie = "Quantity" + "=" + lcQuantity + ";";
+                document.cookie = "CupSize" + "=" + lcCupSize + ";";
+                window.location.href = "http://localhost/CafedesPenseesUserApp/SelectOrderType.html";
+            }
+        </script>
+        <script src="FormToggels.js"></script>
+        <link rel="stylesheet" type="text/css" href="Pure.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <form class="pure-form pure-form-aligned" action="javascript:SaveAndRedirect();">
+            <div class="pure-control-group">
+                <label for="BeanType">Bean Type</label>
+                    <select id="BeanType" name="BeanType" onchange="GetCoffeeTypes(this.value)" required>
+                        <option value="" hidden></option>
+                    </select>
+            </div>
+            <div class="pure-control-group">
+                <label for="CoffeeType">Coffee Type</label>
+                    <select id="CoffeeType" name="CoffeeType" required>
+                        <option value="" hidden></option>
+                    </select>
+            </div>
+            <!--<div class="pure-control-group">
+                <label for="FlavourType">Flavour Type</label>
+                <input type="text" id="FlavourType" name="FlavourType" required/>
+            </div>-->
+            <div class="pure-control-group">
+                <label for="Quantity">Quantity</label>
+                <input type="Number" id="Quantity" name="Quantity" min="1" max="10" value="1" required/>
+            </div>
+            <div class="pure-control-group">
+                <label for="CupSize">Cup Size</label>
+                    <select id="CupSize" name="CupSize" required>
+                        <option value="" hidden ></option>
+                        <option value="Small">Small</option>
+                        <option value="Medium">Medium</option>
+                        <option value="Large">Large</option>
+                    </select>
+            </div>
+            <div class="pure-controls">
+                <button type="submit" class="pure-button pure-button-primary">Continue</button>
+            </div>
+        </form>
+    </body>
+</html>
